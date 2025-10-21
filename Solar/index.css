@@ -1,0 +1,710 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #27ae60;
+  --background-color: #f4f7f9;
+  --card-background: #ffffff;
+  --text-color: #34495e;
+  --light-gray: #ecf0f1;
+  --border-color: #bdc3c7;
+  --error-color: #e74c3c;
+  --font-family: 'Sarabun', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#root {
+  width: 100%;
+  max-width: 600px;
+}
+
+.app-container {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.header h1 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.step-content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.step-content h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.step-content h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+}
+
+.error-message {
+  background-color: #fdeded;
+  color: #c0392b;
+  border-left: 4px solid var(--error-color);
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+
+.btn {
+  display: block;
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #2ecc71;
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.summary-card {
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--secondary-color);
+}
+
+.summary-card h2 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.summary-card p {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.summary-card strong {
+    color: var(--secondary-color);
+}
+
+.warranty-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+}
+
+.warranty-list li {
+    margin-bottom: 0.5rem;
+}
+
+.package-options h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.package-cards-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.package-card {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.package-card h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.package-card .price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.battery-note {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #16a085;
+  margin-top: -1.2rem;
+  margin-bottom: 1rem;
+}
+
+.btn.btn-select {
+    background-color: var(--primary-color);
+    font-size: 1rem;
+    padding: 0.8rem;
+}
+
+.btn.btn-select:hover {
+    background-color: #34495e;
+}
+
+
+.final-options {
+    margin-top: 2rem;
+}
+
+.final-options .btn {
+    margin-bottom: 1rem;
+}
+
+.final-options .btn-secondary {
+    background-color: var(--primary-color);
+}
+.final-options .btn-secondary:hover {
+    background-color: #34495e;
+}
+
+.final-message {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.final-message h2 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Loan Term Slider Styles */
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.loan-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: var(--light-gray);
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 5px;
+}
+
+.loan-slider:hover {
+  opacity: 1;
+}
+
+.loan-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 50%;
+  border: 4px solid var(--card-background);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.loan-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  background: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 50%;
+  border: 4px solid var(--card-background);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.slider-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  background-color: var(--light-gray);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  min-width: 100px;
+  text-align: center;
+}
+
+
+/* --- Step 4: Result Styles --- */
+.customer-summary-card {
+  background-color: #eaf2f8; 
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--primary-color); 
+}
+
+.customer-summary-card h4 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.loan-summary-card {
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid var(--secondary-color);
+}
+.loan-summary-card h4 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.summary-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.summary-detail-row:last-child {
+  border-bottom: none;
+}
+.summary-detail-row.total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  padding-top: 1rem;
+}
+.summary-detail-row.total span:last-child {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+}
+
+.summary-detail-row.total.monthly-payment span:last-child {
+  color: #e67e22;
+  font-size: 1.4rem;
+}
+
+.vat-note {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.explanation-card {
+  background-color: #e8f6f3;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid #1abc9c;
+}
+
+.explanation-card h4 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.explanation-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Loan calculation info and recommendations */
+.info-box {
+  background-color: #e8f6f3;
+  border-left: 4px solid var(--secondary-color);
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.info-box p {
+    font-size: 0.95rem;
+}
+
+/* --- Credit Card Option --- */
+.credit-card-option {
+    animation: fadeIn 0.4s ease-in-out;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border: 1px dashed var(--secondary-color);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.credit-card-option h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+
+/* --- Eligibility Check Styles --- */
+.your-choice-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--border-color);
+}
+.other-options-section h3 {
+    margin-bottom: 1.5rem;
+}
+
+.package-cards-container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.package-card.eligible {
+    border: 2px solid var(--secondary-color);
+}
+.package-card.ineligible {
+    border: 2px solid var(--error-color);
+    background-color: #fcf1f1;
+}
+
+.package-card.ineligible .btn-select {
+    background-color: #bdc3c7;
+}
+.package-card.ineligible .price {
+    color: #c0392b;
+}
+
+.ineligible-text {
+    color: var(--error-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.contact-fallback-section {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background-color: #fdf2f2;
+    border: 1px solid var(--error-color);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-fallback-section h3 {
+    color: #c0392b;
+    margin-bottom: 1rem;
+}
+
+.contact-fallback-section p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Years of Service Input --- */
+.multi-input-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.input-with-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.input-with-label input {
+  width: 100%;
+}
+
+.input-with-label label {
+  margin-bottom: 0;
+  white-space: nowrap;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+/* --- Amortization Table --- */
+.amortization-table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border-radius: 10px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    border: 1px solid #e0e6ed;
+}
+
+.amortization-table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.amortization-table th,
+.amortization-table td {
+    padding: 0.85rem 1rem;
+    text-align: right;
+    border-bottom: 1px solid #e0e6ed;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.amortization-table th:first-child,
+.amortization-table td:first-child {
+    text-align: center;
+    font-weight: 500;
+}
+
+.amortization-table thead th {
+    background-color: #f1f5f9;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.amortization-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.amortization-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.amortization-table tbody tr:hover {
+    background-color: #eef2f7;
+}
+
+.amortization-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.amortization-table .progress-col {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.amortization-table .interest-col {
+    color: #7f8c8d;
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+.amortization-table thead .interest-col {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+
+@media (max-width: 600px) {
+    .app-container {
+        padding: 1.5rem;
+    }
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    .package-cards-container, .package-cards-container-grid {
+        flex-direction: column;
+        display: block; /* Stack cards vertically */
+    }
+    .package-card {
+        margin-bottom: 1rem;
+    }
+    .slider-container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    .loan-slider {
+        width: 100%;
+    }
+    .slider-value {
+        min-width: unset;
+    }
+}
+
+/* --- Progress Indicator Styles --- */
+.progress-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 1.5rem 0 0 0;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80px; /* Adjust width for 5 steps */
+    position: relative;
+    flex-shrink: 0;
+}
+
+.step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--light-gray);
+    color: var(--border-color);
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    z-index: 2; /* Keep above the connector line */
+}
+
+.step-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--border-color);
+    transition: color 0.3s ease;
+}
+
+/* Active State */
+.progress-step.active .step-number {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.progress-step.active .step-label {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Completed State */
+.progress-step.completed .step-number {
+    background-color: #ffffff;
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    font-size: 1.2rem; /* Make checkmark bigger */
+}
+
+.progress-step.completed .step-label {
+    color: var(--text-color);
+}
+
+.progress-connector {
+    flex-grow: 1; /* Take up remaining space between steps */
+    height: 2px;
+    background-color: var(--border-color);
+    margin-top: 18px; /* Align with middle of the circle */
+    transition: background-color 0.3s ease;
+}
+
+.progress-connector.completed {
+    background-color: var(--secondary-color);
+}
